@@ -15,6 +15,6 @@ export default class extends Controller {
     onCreateError(event) {
         const [_data, _status, xhr] = event.detail
 
-        this.shortUrlErrorsTarget.innnerHTML = xhr.response
+        this.shortUrlErrorsTarget.innerHTML = xhr.response
     }
 }
