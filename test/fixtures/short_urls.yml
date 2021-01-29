@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+no_expires_at:
+  short_id: cfeb44
+  origin_url: https://www.google.com
+  admin_id: e034c512e9c13bf3b64b
+  count: 0
+  expires_at: nil
+
+expires_at:
+  short_id: cfeb44
+  origin_url: https://www.google.com
+  admin_id: e034c512e9c13bf3b64b
+  count: 0
+  expires_at: 2021-01-01 21:13:30

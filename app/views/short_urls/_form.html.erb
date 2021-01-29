@@ -1,0 +1,11 @@
+<%= form_with(model: ShortUrl.new, data: { type: "html", action: "ajax:success->short-urls#onCreateSuccess ajax:error->short-urls#onCreateError" }) do |form| %>
+
+  <div class="field">
+    <%= form.label :origin_url %>
+    <%= form.text_field :origin_url, data: { 'short-urls-target': "originUrl" } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create" %>
+  </div>
+<% end %>

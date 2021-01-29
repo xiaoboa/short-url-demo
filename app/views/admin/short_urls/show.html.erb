@@ -1,0 +1,51 @@
+<p>
+  <strong>Short url:</strong>
+  <%= link_to short_url_url(short_id: @short_url.short_id), short_url_url(short_id: @short_url.short_id) %>
+</p>
+
+<p>
+  <strong>Origin url:</strong> <%= @short_url.origin_url %>
+</p>
+
+<p>
+  <strong>Admin url:</strong>
+  <%= link_to admin_short_url_url(admin_id: @short_url.admin_id), admin_short_url_url(admin_id: @short_url.admin_id) %>
+</p>
+
+<p>
+  <strong>Count:</strong> <%= @short_url.count %>
+</p>
+
+<p>
+  <strong>Current time:</strong>
+  <%= DateTime.current.utc %>
+</p>
+
+<p>
+  <strong>Expired at:</strong>
+  <%= @short_url.expires_at %>
+</p>
+
+<%= form_with(model: @short_url, url: admin_short_url_path(admin_id: @short_url.admin_id)) do |form| %>
+  <% if @short_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@short_url.errors.count, "error") %> prohibited this short_url from being saved:</h2>
+
+      <ul>
+        <% @short_url.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :expires_at %>
+    <%= form.datetime_local_field :expires_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Update expires at' %>
+  </div>
+<% end %>

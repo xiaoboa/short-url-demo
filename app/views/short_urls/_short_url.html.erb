@@ -1,0 +1,16 @@
+<li>
+    <p>
+        <strong>Short url:</strong>
+        <%= link_to short_url_url(short_id: short_url.short_id), short_url_url(short_id: short_url.short_id) %>
+    </p>
+
+    <p>
+        <strong>Origin url:</strong> <%= short_url.origin_url %>
+    </p>
+
+    <p>
+        <strong>Admin url:</strong>
+        <%= link_to admin_short_url_url(admin_id: short_url.admin_id), admin_short_url_url(admin_id: short_url.admin_id) %>
+    </p>
+
+</li>
